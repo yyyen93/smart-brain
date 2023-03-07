@@ -1,0 +1,23 @@
+ERROR CODE IN TERMINAL:
+POST https://api.clarifai.com/v2/models/a403429f2ddf4b49b307e318f00e528b/outputs 404
+Error Result: {data: {…}, status: 404, statusText: '', headers: {…}, config: {…}, …}
+
+
+SOLUTION:
+- Its the clarifai FACE_DETECT_MODEL API issue not other issue because i have tested and debug all the components and codes.
+- Below is the solution. Add this code in the field of Clarifai.FACE_DETECT_MODEL
+{
+      id:'face-detection',
+      name:'face-detection',
+      version:'6dc7e46bc9124c5c8824be4822abe105',
+      type:'visual-detector'
+}
+
+- Full code:
+    app.models.predict({
+      id:'face-detection',
+      name:'face-detection',
+      version:'6dc7e46bc9124c5c8824be4822abe105',
+      type:'visual-detector'
+    },this.state.input)
+    .then(response =>{}

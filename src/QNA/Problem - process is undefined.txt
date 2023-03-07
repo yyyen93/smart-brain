@@ -1,0 +1,44 @@
+Question/Problem:
+
+App.js:124 Uncaught ReferenceError: process is not defined
+    at App._init (App.js:124:1)
+    at new App (App.js:53:1)
+    at ./src/containers/App.js (App.js:13:1)
+    at options.factory (react refresh:6:1)
+    at __webpack_require__ (bootstrap:24:1)
+    at fn (hot module replacement:62:1)
+    at ./src/index.js (App.js:61:1)
+    at options.factory (react refresh:6:1)
+    at __webpack_require__ (bootstrap:24:1)
+    at startup:7:1
+
+
+
+Solution:
+Change react-script to version 4.0.3
+
+Change Clarifai version like this
+"clarifai": "2.7.0",
+
+In App.js
+change to
+app.models.predict(Clarifai.FACE_DETECT_MODEL)
+
+
+
+
+
+
+Quick Note: Cleaning Up
+
+Remember how at the beginning of building the Smart Brain app, I showed you a little trick to add in the index.html file (In the DEVELOPER FUNDAMENTALS: Maintain Your Codebase):
+
+<script>process='test'</script>
+
+This line of code was to prevent the process error you saw in that video because we were using the clarifai npm module which used the process keyword on the front end.
+
+Now that we have moved the clarifai package to the backend like it is suppose to be, Node.js understands what the process keyword is (unlike the browser), so you can remove the line above from the index.html file!
+
+
+If the process is not defined still happen,
+which means there is problem with the react-scripts version.

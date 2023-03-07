@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+}
+
+.particles{
+  /* New css syntax */
+  position:fixed; /* everything stay even if you scroll. */
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index: -1;
+  /* If you want everything underneath, we do something called 'z-index', you're allowed to use when you use position 'fixed' or position 'absolute' */
+  /* At our case, we declared -1 because we're saying that this should below. */
+}
+
