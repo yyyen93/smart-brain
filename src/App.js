@@ -106,7 +106,7 @@ class App extends Component{
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input});
     //fetch handleApiCall / imageurl
-    fetch('https://smartbrain-1zip.onrender.com/imageurl', {
+    fetch('https://smartbrain-api-z43g.onrender.com/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -116,7 +116,7 @@ class App extends Component{
     .then(response => response.json())
     .then(response => {
       if(response){
-        fetch('https://smartbrain-1zip.onrender.com/image', {
+        fetch('https://smartbrain-api-z43g.onrender.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
