@@ -28,7 +28,7 @@ class Register extends Component{
         // console.log('this.state: ', this.state);
         //fetch by default does a get request, but in here we want to do a post request.
         //the way we do post request is in the second parameter, we can pass an object that describes what the request will be.
-        fetch('https://smartbrain-api-z43g.onrender.com/register', {
+        fetch('http://localhost:3000/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
